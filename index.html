@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full bg-gray-50 scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NexGExpo - Welcome & Visitor Survey</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body class="bg-white text-gray-900">
+
+    <!-- Header / Navigation -->
+    <header class="absolute inset-x-0 top-0 z-50">
+        <nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
+            <div class="flex lg:flex-1">
+                <a href="#" class="-m-1.5 p-1.5">
+                    <span class="text-2xl font-bold text-indigo-700">NexGExpo</span>
+                </a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <div class="flex lg:hidden">
+                <button type="button" id="mobile-menu-open-button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                    </svg>
+                </button>
+            </div>
+            <!-- Desktop Menu -->
+            <div class="hidden lg:flex lg:gap-x-12">
+                <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Home</a>
+                <a href="#survey-section" class="text-sm font-semibold leading-6 text-gray-900">Survey</a>
+            </div>
+        </nav>
+
+        <!-- Mobile menu, show/hide based on menu open state. -->
+        <div id="mobile-menu" class="lg:hidden hidden" role="dialog" aria-modal="true">
+            <!-- Background backdrop, show/hide based on slide-over state. -->
+            <div class="fixed inset-0 z-50"></div>
+            <div class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+                <div class="flex items-center justify-between">
+                    <a href="#" class="-m-1.5 p-1.5">
+                         <span class="text-2xl font-bold text-indigo-700">NexGExpo</span>
+                    </a>
+                    <button type="button" id="mobile-menu-close-button" class="-m-2.5 rounded-md p-2.5 text-gray-700">
+                        <span class="sr-only">Close menu</span>
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="mt-6 flow-root">
+                    <div class="-my-6 divide-y divide-gray-500/10">
+                        <div class="space-y-2 py-6">
+                            <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Home</a>
+                            <a href="#survey-section" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Survey</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <main>
+        <div class="relative isolate overflow-hidden bg-gradient-to-br from-indigo-100 via-white to-violet-100 pt-14">
+            <div class="mx-auto max-w-7xl px-6 py-32 sm:py-48 lg:px-8">
+                <div class="mx-auto max-w-2xl text-center">
+                    <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
+                        Welcome to <span class="text-indigo-700">NexGExpo</span>
+                    </h1>
+                    <p class="mt-6 text-lg leading-8 text-gray-600">
+                        The advanced online platform for international events. We're leveraging cutting-edge technology to deliver more accurate and impactful connections worldwide.
+                    </p>
+                    <div class="mt-10 flex items-center justify-center gap-x-6">
+                        <a href="#survey-section" id="heroSurveyButton"
+                            class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+                            Fill the Visitor Survey
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]" aria-hidden="true">
+                <div class="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-20 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
+            </div>
+        </div>
+
+        <!-- Survey Section -->
+        <section id="survey-section" class="py-24 sm:py-32">
+            <div class="mx-auto max-w-4xl px-6 lg:px-8">
+                
+                <div class="w-full space-y-8 bg-white p-8 md:p-12 rounded-2xl shadow-2xl transition-all border border-gray-100">
+                    
+                    <!-- Thank you message, hidden by default -->
+                    <div id="thankYouMessage" class="hidden text-center p-8">
+                        <svg class="mx-auto h-16 w-16 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        <h2 class="mt-4 text-2xl font-bold tracking-tight text-gray-900">Thank You!</h2>
+                        <p class="mt-2 text-base text-gray-600">Your thoughts are the building blocks for our idea. We appreciate you helping us create something truly valuable!</p>
+                    </div>
+
+                    <!-- Form container -->
+                    <div id="formContainer">
+                        <div class="text-center">
+                            <h2 class="text-3xl font-bold tracking-tight text-indigo-700">NexGExpo-Survey-Visitors</h2>
+                            <p class="mt-3 text-base text-gray-600">
+                                Your thoughts are the building blocks for this idea. Help us create something truly valuable!!
+                            </p>
+                        </div>
+                        <div class="mt-4 text-center">
+                            <p class="text-sm font-medium text-gray-500">Page <span id="page-current">1</span> of <span id="page-total">4</span></p>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5 mt-2">
+                                <div id="progress-bar" class="bg-indigo-600 h-2.5 rounded-full" style="width: 25%"></div>
+                            </div>
+                        </div>
+
+
+                        <!-- 
+                            This form is pre-linked to your Google Form.
+                            No setup is needed.
+                        -->
+                        <form id="surveyForm" class="mt-10 space-y-8">
+                            
+                            <!-- ============================================= -->
+                            <!-- PAGE 1: Basic Info -->
+                            <!-- ============================================= -->
+                            <div id="page-1" class="form-page active space-y-8">
+                                
+                                <div class="validation-message" id="page-1-error" style="display: none;">Please fill out all required fields.</div>
+
+                                <!-- Q: Name of Event/Exhibition (Required) -->
+                                <div>
+                                    <label for="q1" class="block text-sm font-semibold leading-6 text-gray-900">1. Name of Event/Exhibition <span class="text-red-500">*</span></label>
+                                    <div class="mt-2.5">
+                                        <input type="text" name="entry.206676140" id="q1" required
+                                               class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                                    </div>
+                                </div>
+
+                                <!-- Q: Full Name (Required) -->
+                                <div>
+                                    <label for="q2" class="block text-sm font-semibold leading-6 text-gray-900">2. Full Name <span class="text-red-500">*</span></label>
+                                    <div class="mt-2.5">
+                                        <input type="text" name="entry.181938903" id="q2" required
+                                               class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                                    </div>
+                                </div>
+
+                                <!-- Q: Email address (Required) -->
+                                <div>
+                                    <label for="q3" class="block text-sm font-semibold leading-6 text-gray-900">3. Email address <span class="text-red-500">*</span></label>
+                                    <p class="text-sm text-gray-500">We will not solicitate you by any emails.</p>
+                                    <div class="mt-2.5">
+                                        <input type="email" name="entry.1884119864" id="q3" required
+                                               class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                                    </div>
+                                </div>
+
+                                <!-- Q: Company Name -->
+                                <div>
+                                    <label for="q4" class="block text-sm font-semibold leading-6 text-gray-900">4. Company Name</label>
+                                    <div class="mt-2.5">
+                                        <input type="text" name="entry.1068832598" id="q4"
+                                               class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                                    </div>
+                                </div>
+                                
+                                <!-- Q: What industry or sector... -->
+                                <div>
+                                    <label for="q5" class="block text-sm font-semibold leading-6 text-gray-900">5. What industry or sector do you primarily work in?</label>
+                                    <p class="text-sm text-gray-500">Technology I Manufacturing I Healthcare / Pharma I Retail / E-commerce I Financial Services I Education I Media / Entertainment I Consulting I Government / Public Sector I FMCG I Marine or Others Specify below</p>
+                                    <div class="mt-2.5">
+                                        <input type="text" name="entry.1563816913" id="q5"
+                                               class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                                    </div>
+                                </div>
+
+                                <!-- Q: Could you please indicate... (Dropdown) -->
+                                <div>
+                                    <label for="q6" class="block text-sm font-semibold leading-6 text-gray-900">6. Could you please indicate your primary professional designation or role?</label>
+                                    <div class="mt-2.5">
+                                        <select id="q6" name="entry.2008315802" class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                                            <option value="">Choose</option>
+                                            <option value="Investor">Investor</option>
+                                            <option value="Owner / Founder / C-Level Executive">Owner / Founder / C-Level Executive</option>
+                                            <option value="Director / VP / Head of Department">Director / VP / Head of Department</option>
+                                            <option value="Business Development & Sales">Business Development & Sales</option>
+                                            <option value="Marketing">Marketing</option>
+                                            <option value="Finance / Accounting">Finance / Accounting</option>
+                                            <option value="Operations & Logistics">Operations & Logistics</option>
+                                            <option value="IT & Technology">IT & Technology</option>
+                                            <option value="Product Management & R&D">Product Management & R&D</option>
+                                            <option value="Finance & Accounting">Finance & Accounting</option>
+                                            <option value="Human Resources & Administration">Human Resources & Administration</option>
+                                            <option value="Consultant / Advisor">Consultant / Advisor</option>
+                                            <option value="Student">Student</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- ============================================= -->
+                            <!-- PAGE 2: Attendance & Experience -->
+                            <!-- ============================================= -->
+                            <div id="page-2" class="form-page space-y-8">
+                                <h3 class="text-xl font-semibold text-gray-900 border-b pb-2">Attendance & Experience</h3>
+
+                                <!-- Q: How often do you attend... (Radio) -->
+                                <fieldset>
+                                    <legend class="text-sm font-semibold leading-6 text-gray-900">7. How often do you attend industry exhibitions in a year?</legend>
+                                    <div class="mt-2.5 space-y-2">
+                                        <div class="flex items-center gap-x-3">
+                                            <input id="q7-1" name="entry.1166699264" type="radio" value="1-2" class="radio-custom h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                            <label for="q7-1" class="block text-sm font-medium leading-6 text-gray-900">1-2</label>
+                                        </div>
+                                        <div class="flex items-center gap-x-3">
+                                            <input id="q7-2" name="entry.1166699264" type="radio" value="3-5" class="radio-custom h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                            <label for="q7-2" class="block text-sm font-medium leading-6 text-gray-900">3-5</label>
+                                        </div>
+                                        <div class="flex items-center gap-x-3">
+                                            <input id="q7-3" name="entry.1166699264" type="radio" value="6-10" class="radio-custom h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                            <label for="q7-3" class="block text-sm font-medium leading-6 text-gray-900">6-10</label>
+                                        </div>
+                                        <div class="flex items-center gap-x-3">
+                                            <input id="q7-4" name="entry.1166699264" type="radio" value="10+" class="radio-custom h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                            <label for="q7-4" class="block text-sm font-medium leading-6 text-gray-900">10+</label>
+                                        </div>
+                                    </div>
+                                </fieldset>
+
+                                <!-- Q: Have you ever been unable to attend... (Radio) -->
+                                <fieldset>
+                                    <legend class="text-sm font-semibold leading-6 text-gray-900">8. Have you ever been unable to attend an exhibition due to travel, International event, budget or time constraints?</legend>
+                                    <div class="mt-2.5 space-y-2">
+                                        <div class="flex items-center gap-x-3">
+                                            <input id="q8-1" name="entry.1353118947" type="radio" value="Yes" class="radio-custom h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                            <label for="q8-1" class="block text-sm font-medium leading-6 text-gray-900">Yes</label>
+                                        </div>
+                                        <div class="flex items-center gap-x-3">
+                                            <input id="q8-2" name="entry.1353118947" type="radio" value="No" class="radio-custom h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                            <label for="q8-2" class="block text-sm font-medium leading-6 text-gray-900">No</label>
+                                        </div>
+                                    </div>
+                                </fieldset>
+
+                                <!-- Q: Would you be interested in exploring... (Radio) -->
+                                <fieldset>
+                                    <legend class="text-sm font-semibold leading-6 text-gray-900">9. Would you be interested in exploring an online version of exhibitions you missed?</legend>
+                                    <div class="mt-2.5 space-y-2">
+                                        <div class="flex items-center gap-x-3">
+                                            <input id="q9-1" name="entry.1047690740" type="radio" value="Yes" class="radio-custom h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                            <label for="q9-1" class="block text-sm font-medium leading-6 text-gray-900">Yes</label>
+                                        </div>
+                                        <div class="flex items-center gap-x-3">
+                                            <input id="q9-2" name="entry.1047690740" type="radio" value="No" class="radio-custom h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                            <label for="q9-2" class="block text-sm font-medium leading-6 text-gray-900">No</label>
+                                        </div>
+                                    </div>
+                                </fieldset>
+
+                                <!-- Q: Would you revisit an exhibition online... (Radio) -->
+                                <fieldset>
+                                    <legend class="text-sm font-semibold leading-6 text-gray-900">10. Would you revisit an exhibition online after physically attending it to review booths or collect materials?</legend>
+                                    <div class="mt-2.5 space-y-2">
+                                        <div class="flex items-center gap-x-3">
+                                            <input id="q10-1" name="entry.134299382" type="radio" value="Yes" class="radio-custom h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                            <label for="q10-1" class="block text-sm font-medium leading-6 text-gray-900">Yes</label>
+                                        </div>
+                                        <div class="flex items-center gap-x-3">
+                                            <input id="q10-2" name="entry.134299382" type="radio" value="No" class="radio-custom h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                            <label for="q10-2" class="block text-sm font-medium leading-6 text-gray-900">No</label>
+                                        </div>
+                                    </div>
+                                </fieldset>
+
+                                <!-- Q: Would you explore global exhibitions... (Radio) -->
+                                <fieldset>
+                                    <legend class="text-sm font-semibold leading-6 text-gray-900">11. Would you explore global exhibitions online that you cannot attend physically?</legend>
+                                    <div class="mt-2.5 space-y-2">
+                                        <div class="flex items-center gap-x-3">
+                                            <input id="q11-1" name="entry.362624419" type="radio" value="Yes" class="radio-custom h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                            <label for="q11-1" class="block text-sm font-medium leading-6 text-gray-900">Yes</label>
+                                        </div>
+                                        <div class="flex items-center gap-x-3">
+                                            <input id="q11-2" name="entry.362624419" type="radio" value="No" class="radio-custom h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                            <label for="q11-2" class="block text-sm font-medium leading-6 text-gray-900">No</label>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </div>
+
+                            <!-- ============================================= -->
+                            <!-- PAGE 3: Desired Features -->
+                            <!-- ============================================= -->
+                            <div id="page-3" class="form-page space-y-8">
+                                <h3 class="text-xl font-semibold text-gray-900 border-b pb-2">Desired Features & Willingness to Engagement</h3>
+
+                                <!-- Q: How valuable would it be... (Linear Scale) -->
+                                <fieldset>
+                                    <legend class="text-sm font-semibold leading-6 text-gray-900">12. How valuable would it be to have an interactive 3D floor plan to explore booths online, along with access to features like company profiling videos, product/service introductions, downloadable brochures, direct contact with management, and other interactive networking tools?</legend>
+                                    <div class="mt-4 flex items-center justify-between flex-wrap gap-y-2">
+                                        <span class="linear-scale-label">Minimal Value</span>
+                                        <div class="linear-scale-radio"><label for="q12-1" class="block text-sm">1</label><input type="radio" id="q12-1" name="entry.68417961" value="1" class="radio-custom h-4 w-4"></div>
+                                        <div class="linear-scale-radio"><label for="q12-2" class="block text-sm">2</label><input type="radio" id="q12-2" name="entry.68417961" value="2" class="radio-custom h-4 w-4"></div>
+                                        <div class="linear-scale-radio"><label for="q12-3" class="block text-sm">3</label><input type="radio" id="q12-3" name="entry.68417961" value="3" class="radio-custom h-4 w-4"></div>
+                                        <div class="linear-scale-radio"><label for="q12-4" class="block text-sm">4</label><input type="radio" id="q12-4" name="entry.68417961" value="4" class="radio-custom h-4 w-4"></div>
+                                        <div class="linear-scale-radio"><label for="q12-5" class="block text-sm">5</label><input type="radio" id="q12-5" name="entry.68417961" value="5" class="radio-custom h-4 w-4"></div>
+                                        <div class="linear-scale-radio"><label for="q12-6" class="block text-sm">6</label><input type="radio" id="q12-6" name="entry.68417961" value="6" class="radio-custom h-4 w-4"></div>
+                                        <div class="linear-scale-radio"><label for="q12-7" class="block text-sm">7</label><input type="radio" id="q12-7" name="entry.68417961" value="7" class="radio-custom h-4 w-4"></div>
+                                        <div class="linear-scale-radio"><label for="q12-8" class="block text-sm">8</label><input type="radio" id="q12-8" name="entry.68417961" value="8" class="radio-custom h-4 w-4"></div>
+                                        <div class="linear-scale-radio"><label for="q12-9" class="block text-sm">9</label><input type="radio" id="q12-9" name="entry.68417961" value="9" class="radio-custom h-4 w-4"></div>
+                                        <div class="linear-scale-radio"><label for="q12-10" class="block text-sm">10</label><input type="radio" id="q12-10" name="entry.68417961" value="10" class="radio-custom h-4 w-4"></div>
+                                        <span class="linear-scale-label">Exceptional Game-Changer</span>
+                                    </div>
+                                </fieldset>
+
+                                <!-- Q: Would you like to purchase samples... (Radio) -->
+                                <fieldset>
+                                    <legend class="text-sm font-semibold leading-6 text-gray-900">13. Would you like to purchase samples product directly from an online exhibition?</legend>
+                                    <div class="mt-2.5 space-y-2">
+                                        <div class="flex items-center gap-x-3"><input id="q13-1" name="entry.2120038692" type="radio" value="Yes" class="radio-custom h-4 w-4"><label for="q13-1" class="block text-sm font-medium">Yes</label></div>
+                                        <div class="flex items-center gap-x-3"><input id="q13-2" name="entry.2120038692" type="radio" value="No" class="radio-custom h-4 w-4"><label for="q13-2" class="block text-sm font-medium">No</label></div>
+                                        <div class="flex items-center gap-x-3"><input id="q13-3" name="entry.2120038692" type="radio" value="May be" class="radio-custom h-4 w-4"><label for="q13-3" class="block text-sm font-medium">May be</label></div>
+                                    </div>
+                                </fieldset>
+
+                                <!-- Q: Would you find value in accessing... (Radio) -->
+                                <fieldset>
+                                    <legend class="text-sm font-semibold leading-6 text-gray-900">14. Would you find value in accessing online exhibitions that you couldn't attend due to travel constraints or their international location?</legend>
+                                    <div class="mt-2.5 space-y-2">
+                                        <div class="flex items-center gap-x-3"><input id="q14-1" name="entry.1994116806" type="radio" value="Yes" class="radio-custom h-4 w-4"><label for="q14-1" class="block text-sm font-medium">Yes</label></div>
+                                        <div class="flex items-center gap-x-3"><input id="q14-2" name="entry.1994116806" type="radio" value="No" class="radio-custom h-4 w-4"><label for="q14-2" class="block text-sm font-medium">No</label></div>
+                                    </div>
+                                </fieldset>
+
+                                <!-- Q: How would you rate the overall value... (Linear Scale) -->
+                                <fieldset>
+                                    <legend class="text-sm font-semibold leading-6 text-gray-900">15. How would you rate the overall value or usefulness of such a platform?</legend>
+                                    <div class="mt-4 flex items-center justify-between flex-wrap gap-y-2">
+                                        <span class="linear-scale-label">Minimal</span>
+                                        <div class="linear-scale-radio"><label for="q15-1" class="block text-sm">1</label><input type="radio" id="q15-1" name="entry.271169001" value="1" class="radio-custom h-4 w-4"></div>
+                                        <div class="linear-scale-radio"><label for="q15-2" class="block text-sm">2</label><input type="radio" id="q15-2" name="entry.271169001" value="2" class="radio-custom h-4 w-4"></div>
+                                        <div class="linear-scale-radio"><label for="q15-3" class="block text-sm">3</label><input type="radio" id="q15-3" name="entry.271169001" value="3" class="radio-custom h-4 w-4"></div>
+                                        <div class="linear-scale-radio"><label for="q15-4" class="block text-sm">4</label><input type="radio" id="q15-4" name="entry.271169001" value="4" class="radio-custom h-4 w-4"></div>
+                                        <div class="linear-scale-radio"><label for="q15-5" class="block text-sm">5</label><input type="radio" id="q15-5" name="entry.271169001" value="5" class="radio-custom h-4 w-4"></div>
+                                        <div class="linear-scale-radio"><label for="q15-6" class="block text-sm">6</label><input type="radio" id="q15-6" name="entry.271169001" value="6" class="radio-custom h-4 w-4"></div>
+                                        <div class="linear-scale-radio"><label for="q15-7" class="block text-sm">7</label><input type="radio" id="q15-7" name="entry.271169001" value="7" class="radio-custom h-4 w-4"></div>
+                                        <div class="linear-scale-radio"><label for="q15-8" class="block text-sm">8</label><input type="radio" id="q15-8" name="entry.271169001" value="8" class="radio-custom h-4 w-4"></div>
+                                        <div class="linear-scale-radio"><label for="q15-9" class="block text-sm">9</label><input type="radio" id="q15-9" name="entry.271169001" value="9" class="radio-custom h-4 w-4"></div>
+                                        <div class="linear-scale-radio"><label for="q15-10" class="block text-sm">10</label><input type="radio" id="q15-10" name="entry.271169001" value="10" class="radio-custom h-4 w-4"></div>
+                                        <span class="linear-scale-label">Outstanding</span>
+                                    </div>
+                                </fieldset>
+
+                                <!-- Q: If it offered exclusive networking... (Radio) -->
+                                <fieldset>
+                                    <legend class="text-sm font-semibold leading-6 text-gray-900">16. If it offered exclusive networking opportunities, deeper insights, or premium virtual events, would you be willing to invest a small fee for enhanced access?</legend>
+                                    <div class="mt-2.5 space-y-2">
+                                        <div class="flex items-center gap-x-3"><input id="q16-1" name="entry.1408828987" type="radio" value="Yes, Of Course" class="radio-custom h-4 w-4"><label for="q16-1" class="block text-sm font-medium">Yes, Of Course</label></div>
+                                        <div class="flex items-center gap-x-3"><input id="q16-2" name="entry.1408828987" type="radio" value="No, I will not use Platform" class="radio-custom h-4 w-4"><label for="q16-2" class="block text-sm font-medium">No, I will not use Platform</label></div>
+                                    </div>
+                                </fieldset>
+
+                                <!-- Q: Based on the exclusive benefits... (Radio) -->
+                                <fieldset>
+                                    <legend class="text-sm font-semibold leading-6 text-gray-900">17. Based on the exclusive benefits and enhanced experience offered, what price point do you feel is worth for premium access to this platform?</legend>
+                                    <div class="mt-2.5 space-y-2">
+                                        <div class="flex items-center gap-x-3"><input id="q17-1" name="entry.972773822" type="radio" value="Cost of a Arabica Coffee + Croissants" class="radio-custom h-4 w-4"><label for="q17-1" class="block text-sm font-medium">Cost of a Arabica Coffee + Croissants</label></div>
+                                        <div class="flex items-center gap-x-3"><input id="q17-2" name="entry.972773822" type="radio" value="Cost of a Buffet Lunch" class="radio-custom h-4 w-4"><label for="q17-2" class="block text-sm font-medium">Cost of a Buffet Lunch</label></div>
+                                        <div class="flex items-center gap-x-3"><input id="q17-3" name="entry.972773822" type="radio" value="Cost of a Classic European Lunch" class="radio-custom h-4 w-4"><label for="q17-3" class="block text-sm font-medium">Cost of a Classic European Lunch</label></div>
+                                        <div class="flex items-center gap-x-3"><input id="q17-4" name="entry.972773822" type="radio" value="Cost of a Fine Dining Experience" class="radio-custom h-4 w-4"><label for="q17-4" class="block text-sm font-medium">Cost of a Fine Dining Experience</label></div>
+                                        <div class="flex items-center gap-x-3"><input id="q17-5" name="entry.972773822" type="radio" value="None :D" class="radio-custom h-4 w-4"><label for="q17-5" class="block text-sm font-medium">None :D</label></div>
+                                    </div>
+                                </fieldset>
+
+                                <!-- Q: Would you like to purchase product samples... (Radio) -->
+                                <fieldset>
+                                    <legend class="text-sm font-semibold leading-6 text-gray-900">18. Would you like to purchase product samples directly from a global online exhibition?</legend>
+                                    <div class="mt-2.5 space-y-2">
+                                        <div class="flex items-center gap-x-3"><input id="q18-1" name="entry.1205367676" type="radio" value="Yes" class="radio-custom h-4 w-4"><label for="q18-1" class="block text-sm font-medium">Yes</label></div>
+                                        <div class="flex items-center gap-x-3"><input id="q18-2" name="entry.1205367676" type="radio" value="No" class="radio-custom h-4 w-4"><label for="q18-2" class="block text-sm font-medium">No</label></div>
+                                    </div>
+                                </fieldset>
+
+                                <!-- Q: Would you be interested in receiving personalized... (Radio) -->
+                                <fieldset>
+                                    <legend class="text-sm font-semibold leading-6 text-gray-900">19. Would you be interested in receiving personalized recommendations on which booths to explore on platform?</legend>
+                                    <div class="mt-2.5 space-y-2">
+                                        <div class="flex items-center gap-x-3"><input id="q19-1" name="entry.361491763" type="radio" value="Yes" class="radio-custom h-4 w-4"><label for="q19-1" class="block text-sm font-medium">Yes</label></div>
+                                        <div class="flex items-center gap-x-3"><input id="q19-2" name="entry.361491763" type="radio" value="No" class="radio-custom h-4 w-4"><label for="q19-2" class="block text-sm font-medium">No</label></div>
+                                    </div>
+                                </fieldset>
+
+                                <!-- Q: How likely are you to attend... (Linear Scale) -->
+                                <fieldset>
+                                    <legend class="text-sm font-semibold leading-6 text-gray-900">20. How likely are you to attend an online version of a major industry events if it’s available from around world's events?</legend>
+                                    <div class="mt-4 flex items-center justify-between flex-wrap gap-y-2">
+                                        <span class="linear-scale-label">Not Sure</span>
+                                        <div class="linear-scale-radio"><label for="q20-1" class="block text-sm">1</label><input type="radio" id="q20-1" name="entry.1017833005" value="1" class="radio-custom h-4 w-4"></div>
+                                        <div class="linear-scale-radio"><label for="q20-2" class="block text-sm">2</label><input type="radio" id="q20-2" name="entry.1017833005" value="2" class="radio-custom h-4 w-4"></div>
+                                        <div class="linear-scale-radio"><label for="q20-3" class="block text-sm">3</label><input type="radio" id="q20-3" name="entry.1017833005" value="3" class="radio-custom h-4 w-4"></div>
+                                        <div class="linear-scale-radio"><label for="q20-4" class="block text-sm">4</label><input type="radio" id="q20-4" name="entry.1017833005" value="4" class="radio-custom h-4 w-4"></div>
+                                        <div class="linear-scale-radio"><label for="q20-5" class="block text-sm">5</label><input type="radio" id="q20-5" name="entry.1017833005" value="5" class="radio-custom h-4 w-4"></div>
+                                        <div class="linear-scale-radio"><label for="q20-6" class="block text-sm">6</label><input type="radio" id="q20-6" name="entry.1017833005" value="6" class="radio-custom h-4 w-4"></div>
+                                        <div class="linear-scale-radio"><label for="q20-7" class="block text-sm">7</label><input type="radio" id="q20-7" name="entry.1017833005" value="7" class="radio-custom h-4 w-4"></div>
+                                        <div class="linear-scale-radio"><label for="q20-8" class="block text-sm">8</label><input type="radio" id="q20-8" name="entry.1017833005" value="8" class="radio-custom h-4 w-4"></div>
+                                        <div class="linear-scale-radio"><label for="q20-9" class="block text-sm">9</label><input type="radio" id="q20-9" name="entry.1017833005" value="9" class="radio-custom h-4 w-4"></div>
+                                        <div class="linear-scale-radio"><label for="q20-10" class="block text-sm">10</label><input type="radio" id="q20-10" name="entry.1017833005" value="10" class="radio-custom h-4 w-4"></div>
+                                        <span class="linear-scale-label">Definitely</span>
+                                    </div>
+                                </fieldset>
+
+                                <!-- Q: Would you be more interested if: (Radio) -->
+                                <fieldset>
+                                    <legend class="text-sm font-semibold leading-6 text-gray-900">21. Would you be more interested in online access if:</legend>
+                                    <div class="mt-2.5 space-y-2">
+                                        <div class="flex items-center gap-x-3"><input id="q21-1" name="entry.1105151523" type="radio" value="it helped you discover startups/innovations?" class="radio-custom h-4 w-4"><label for="q21-1" class="block text-sm font-medium">it helped you discover startups/innovations?</label></div>
+                                        <div class="flex items-center gap-x-3"><input id="q21-2" name="entry.1105151523" type="radio" value="it allowed you to follow up with companies you couldn’t meet at the event?" class="radio-custom h-4 w-4"><label for="q21-2" class="block text-sm font-medium">it allowed you to follow up with companies you couldn’t meet at the event?</label></div>
+                                        <div class="flex items-center gap-x-3"><input id="q21-3" name="entry.1105151523" type="radio" value="it helped you explore other countries' exhibitions?" class="radio-custom h-4 w-4"><label for="q21-3" class="block text-sm font-medium">it helped you explore other countries' exhibitions?</label></div>
+                                    </div>
+                                </fieldset>
+
+                                <!-- Q: What would encourage you... (Text) -->
+                                <div>
+                                    <label for="q22" class="block text-sm font-semibold leading-6 text-gray-900">22. What would encourage you to spend more time in an online exhibition?</label>
+                                    <div class="mt-2.5">
+                                        <input type="text" name="entry.1165155018" id="q22" class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- ============================================= -->
+                            <!-- PAGE 4: Open Feedback -->
+                            <!-- ============================================= -->
+                            <div id="page-4" class="form-page space-y-8">
+                                <h3 class="text-xl font-semibold text-gray-900 border-b pb-2">Open Feedback</h3>
+                                <p class="text-sm text-gray-600 font-medium">Your Opinion Matters to Build it Better!</p>
+
+                                <!-- Q: Do you agree that the most significant value... (Radio) -->
+                                <fieldset>
+                                    <legend class="text-sm font-semibold leading-6 text-gray-900">23. Do you agree that the most significant value of attending a physical exhibition lies in the live connections, face-to-face conversations, building deep relationships, hands-on product demos, and the unique sensory experience they offer?</legend>
+                                    <div class="mt-2.5 space-y-2">
+                                        <div class="flex items-center gap-x-3"><input id="q23-1" name="entry.1107578278" type="radio" value="Yes" class="radio-custom h-4 w-4"><label for="q23-1" class="block text-sm font-medium">Yes</label></div>
+                                        <div class="flex items-center gap-x-3"><input id="q23-2" name="entry.1107578278" type="radio" value="No" class="radio-custom h-4 w-4"><label for="q23-2" class="block text-sm font-medium">No</label></div>
+                                    </div>
+                                </fieldset>
+
+                                <!-- Q: If an online version... (Radio) -->
+                                <fieldset>
+                                    <legend class="text-sm font-semibold leading-6 text-gray-900">24. If an online version of a physical exhibition became available 30 days after the event ended, would you still consider attending the physical event in the future?</legend>
+                                    <div class="mt-2.5 space-y-2">
+                                        <div class="flex items-center gap-x-3"><input id="q24-1" name="entry.1912999459" type="radio" value="Yes" class="radio-custom h-4 w-4"><label for="q24-1" class="block text-sm font-medium">Yes</label></div>
+                                        <div class="flex items-center gap-x-3"><input id="q24-2" name="entry.1912999459" type="radio" value="No" class="radio-custom h-4 w-4"><label for="q24-2" class="block text-sm font-medium">No</label></div>
+                                    </div>
+                                </fieldset>
+
+                                <!-- Q: Would it be helpful if a digital... (Radio) -->
+                                <fieldset>
+                                    <legend class="text-sm font-semibold leading-6 text-gray-900">25. Would it be helpful if a digital exhibition platform let you filter and search booths by country, Industry segment, product/ services related to filter out best related companies to Save Your Time?</legend>
+                                    <div class="mt-2.5 space-y-2">
+                                        <div class="flex items-center gap-x-3"><input id="q25-1" name="entry.1287091515" type="radio" value="Yes" class="radio-custom h-4 w-4"><label for="q25-1" class="block text-sm font-medium">Yes</label></div>
+                                        <div class="flex items-center gap-x-3"><input id="q25-2" name="entry.1287091515" type="radio" value="No" class="radio-custom h-4 w-4"><label for="q25-2" class="block text-sm font-medium">No</label></div>
+                                    </div>
+                                </fieldset>
+
+                                <!-- Q: What is the biggest frustration... (Textarea) -->
+                                <div>
+                                    <label for="q26" class="block text-sm font-semibold leading-6 text-gray-900">26. What is the biggest frustration you experience during or after attending physical exhibitions?</label>
+                                    <div class="mt-2.5">
+                                        <textarea name="entry.2001479836" id="q26" rows="4"
+                                                  class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"></textarea>
+                                    </div>
+                                </div>
+
+                                <!-- Q: Would like to share... (Textarea) -->
+                                <div>
+                                    <label for="q27" class="block text-sm font-semibold leading-6 text-gray-900">27. Would like to share anything feedback or solution to this model?</label>
+                                    <div class="mt-2.5">
+                                        <textarea name="entry.1006509491" id="q27" rows="4"
+                                                  class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"></textarea>
+                                    </div>
+                                </div>
+                                
+                                <!-- Q: Happy Visitor... -->
+                                <div>
+                                    <label for="q28" class="block text-sm font-semibold leading-6 text-gray-900">28. Happy Visitor - Share your Smile :)</label>
+                                    <p class="text-sm text-gray-500">You can paste a link to the image.<br><a href="https://imgur.com/upload" class="text-blue-600 hover:underline">  https://imgur.com/upload </a></p>
+                                    <div class="mt-2.5">
+                                        <input type="text" name="entry.1495111162" id="q28"
+                                               class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                               placeholder="https://imgur.com/your_smile">
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Hidden Google Form inputs -->
+                            <input type="hidden" name="fbzx" value="1938229871442111210">
+
+                            <!-- Navigation Buttons -->
+                            <div class="pt-2 flex justify-between items-center">
+                                <button type="button" id="backButton"
+                                        class="rounded-md bg-gray-200 px-3.5 py-2.5 text-sm font-semibold text-gray-700 shadow-sm hover:bg-gray-300">
+                                    Back
+                                </button>
+                                <button type="button" id="nextButton"
+                                        class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500">
+                                    Next
+                                </button>
+                                <button type="submit" id="submitButton"
+                                        class="hidden rounded-md bg-green-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-green-500">
+                                    Submit Feedback
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900" aria-labelledby="footer-heading">
+        <div class="mx-auto max-w-7xl px-6 py-16 sm:py-24 lg:px-8">
+            <div class="mt-8 border-t border-gray-700 pt-8 text-center">
+                <p class="text-xs leading-5 text-gray-400">&copy; 2025 NexGExpo, Inc. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>

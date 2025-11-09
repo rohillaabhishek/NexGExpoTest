@@ -1,0 +1,48 @@
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Custom form styles */
+        input:focus, textarea:focus, select:focus {
+            border-color: #4f46e5 !important;
+            box-shadow: 0 0 0 2px #c7d2fe !important;
+        }
+        .radio-custom:checked {
+            background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3ccircle cx='8' cy='8' r='3'/%3e%3c/svg%3e");
+            border-color: #4f46e5;
+            background-color: #4f46e5;
+        }
+        .linear-scale-label {
+            -webkit-box-flex: 1;
+            flex-grow: 1;
+            flex-shrink: 1;
+            flex-basis: 0;
+            min-width: 40px;
+            text-align: center;
+            font-size: 0.875rem;
+            color: #6b7280;
+        }
+        .linear-scale-radio {
+            -webkit-box-flex: 1;
+            flex-grow: 1;
+            flex-shrink: 1;
+            flex-basis: 0;
+            min-width: 40px;
+            text-align: center;
+        }
+        .form-page {
+            display: none; /* Pages are hidden by default */
+        }
+        .form-page.active {
+            display: block; /* Active page is shown */
+        }
+        /* Simple validation error style */
+        .validation-error {
+            border-color: #ef4444 !important;
+        }
+        .validation-message {
+            color: #ef4444;
+            font-size: 0.875rem;
+            margin-top: 4px;
+        }
+    
